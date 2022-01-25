@@ -6,10 +6,10 @@ function getAnimalsOlderThan(animal, age) {
   species.forEach((specie) => {
     if (specie.name === animal) {
       const { residents } = specie;
-      isOlderThan = residents.every((resident) => resident.age <= age);
+      isOlderThan = residents.every((resident) => resident.age >= age);
     }
-    return isOlderThan;
   });
+  return isOlderThan;
 }
 
 module.exports = getAnimalsOlderThan;
