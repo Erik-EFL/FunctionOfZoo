@@ -1,6 +1,4 @@
-const data = require('../data/zoo_data');
-
-const { employees } = data;
+const { employees } = require('../data/zoo_data');
 
 const isManager = (id) =>
   employees.some((employ) => employ.managers.includes(id));
