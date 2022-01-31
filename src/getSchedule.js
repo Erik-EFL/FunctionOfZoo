@@ -4,7 +4,6 @@ const arca = species.reduce((accumulator, animal) => {
   accumulator.push(animal.name);
   return accumulator;
 }, []);
-
 const getAnimalDay = (day) => {
   // Verifica e filtra se nos dias de aprestação dos animais tem também os dias da semana
   const filterAnimal = species.filter((present) => present.availability.includes(day));
@@ -14,7 +13,6 @@ const getAnimalDay = (day) => {
     return accumulator;
   }, []);
 };
-
 const operation = () => Object.keys(hours).reduce((accumulator, day) => {
   if (day === 'Monday') {
     accumulator[day] = { officeHour: 'CLOSED', exhibition: 'The zoo will be closed!' };
@@ -26,7 +24,6 @@ const operation = () => Object.keys(hours).reduce((accumulator, day) => {
   }
   return accumulator;
 }, {});
-
 const getSchedule = (scheduleTarget) => {
   // Retorna todos os dias de apresentação caso o paramento esteja vazio
   if (Object.keys(hours).includes(scheduleTarget)) {
@@ -40,5 +37,4 @@ const getSchedule = (scheduleTarget) => {
   }
   return operation();
 };
-
 module.exports = getSchedule;
