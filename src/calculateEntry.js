@@ -18,7 +18,7 @@ function countEntrants(entrants) {
 
 function calculateEntry(entrants) {
   let total = 0;
-  if (entrants === undefined || Object.keys(entrants).length === 0) return 0;
+  if (!entrants || !entrants.length) return 0;
   const totalPayers = countEntrants(entrants);
   Object.keys(totalPayers).forEach((element) => {
     total += totalPayers[element] * prices[element];
